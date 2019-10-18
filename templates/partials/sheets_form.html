@@ -49,207 +49,255 @@
       <option value="Blood Hunter">Blood Hunter</option>
     </select>
   </div>
+  {% if sheet.class == "Sorcerer" %}
   <div class="form-group">
-    <label for="sheet-sub-class">Sub-Class</label
-    ><input class="form-control" type="text" />
+    <label for="sheet-sub_class">Sub-Class</label
+    ><select
+      class="form-control"
+      name="sub_class"
+      value="{{ sheet.sub_class }}"
+      id="sorc-subclass"
+    >
+      <option value="Divine Soul">Divine Soul</option>
+      <option value="Draconic Bloodline">Draconic Bloodline</option>
+      <option value="Phoenix Sorcery">Phoenix Sorcery</option>
+      <option value="Sea Sorcery">Sea Sorcery</option>
+      <option value="Shadow Magic">Shadow Magic</option>
+      <option value="Stone Sorcery">Stone Sorcery</option>
+      <option value="Wild Magic">Wild Magic</option>
+      <option value="Giant Soul">Giant Soul </option>
+      <option value="Pyromancy">Pyromancy</option>
+    </select>
   </div>
+  {% endif %}
   <div class="form-group">
     <label for="sheet-level">Character Level</label
-    ><input class="form-control" type="text" />
+    ><input class="form-control" type="number" min="1" max="20" value="{{sheet.level}}"/>
   </div>
   <div class="form-group">
     <label for="sheet-alignment">Alignment</label
-    ><input class="form-control" type="text" />
+    ><select class="form-control" value="{{ sheet.alignment }}">
+      <option value="Lawful Good">Lawful Good</option>
+      <option value="Lawful Neutral">Lawful Neutral</option>
+      <option value="Lawful Evil">Lawful Evil</option>
+      <option value="Neutral Good">Neutral Goo</option>
+      <option value="True Neutral">True Neutral</option>
+      <option value="Neutral Evil">Neutral Evil</option>
+      <option value="Chaotic Good">Chaotic Good</option>
+      <option value="Chaotic Neutral">Chaotic Neutral</option>
+      <option value="Chaotic Evil">Chaotic Evil</option>
+    </select>
   </div>
   <div class="form-group">
     <label for="sheet-background">Your background</label
-    ><input class="form-control" type="text" />
-  </div>
+    ><select value="{{sheet.background}}" class="form-control">
+      <option value="Acolyte">Acolyte</option>
+      <option value="Charlatan">Charlatan</option>
+      <option value="Criminal">Criminal</option>
+      <option value="Entertainer">Entertainer</option>
+      <option value="Folk Hero">Folk Hero</option>
+      <option value="Guild Artisan">Guild Artisan</option>
+      <option value="Hermit">Hermit</option>
+      <option value="Outlander">Outlander</option>
+      <option value="Noble">Noble</option>
+      <option value="Sage">Sage</option>
+      <option value="Sailor">Sailor</option>
+      <option value="Soldier">Soldier</option>
+      <option value="Urchin">Urchin</option>
+  </select>
   <div class="form-group">
     <label for="sheet-static_prof">Flat Proficency Bonus</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.static_prof }}" class="form-control" type="number" />
   </div>
   <div class="form-group">
     <label for="sheet-prof_die">Proficency Die Type</label
-    ><input class="form-control" type="text" />
+    ><select value="{{ sheet.prof_die }}" class="form-control" >
+      <option value="d4">1d4</option>
+      <option value="d6">1d6</option>
+      <option value="d8">1d8</option>
+      <option value="d10">1d10</option>
+      <option value="d12">1d12</option>
+      <option value="d20">1d20</option>
+    </select>
   </div>
   <div class="form-group">
     <label for="sheet-courage">Courage</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.courage }}" class="form-control" type="number" min="0" max="20" />
   </div>
   <div class="form-group">
     <label for="sheet-inspiration">Inspiration</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.inspiration }}" class="form-control" type="number" min="0" max="20"/>
   </div>
   <div class="form-group">
     <label for="sheet-strength">Strength</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.strength }}" class="form-control" type="" min="1" max="20" />
   </div>
   <div class="form-group">
     <label for="sheet-dexterity">Dexterity</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.dexterity }}" class="form-control" type="number" min="1" max="20" />
   </div>
   <div class="form-group">
     <label for="sheet-constitution">Constitution</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.constitution }}" class="form-control" type="number" min="1" max="20" />
   </div>
   <div class="form-group">
     <label for="sheet-intelligence">Intelligence</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.intelligence }}" class="form-control" type="number" min="1" max="20" />
   </div>
   <div class="form-group">
     <label for="sheet-wisdom">Wisdom</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.wisdom }}" class="form-control" type="number" min="1" max="20" />
   </div>
   <div class="form-group">
     <label for="sheet-charisma">Charisma</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.charisma }}" class="form-control" type="number" min="1" max="20" />
   </div>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="sheet-armor_training">Armor Training</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.armor_training }}" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-combat_training">Combat Training</label
-    ><input class="form-control" type="text" />
+    ><input value="{{ sheet.combat_training }}" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-weapon_prof">Weapon Proficiencies</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-armor_class">Armor Class</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-max_hp">Max Hp</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-hit_die_type">Hit Die Type</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-max_hit_die">Max Hit Die</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-hit_die_remaining">Hit Die Remaining</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-death_saves">Death Saves</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-varient_points">Varient Points</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
-    <label for="sheet-xp">XP</label><input class="form-control" type="text" />
+    <label for="sheet-xp">XP</label
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-initative_bonus">Initative Bonus</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-speed">Speed</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-feats">Feats</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-racial_traits">Racial Traits</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-languages">Languages</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-height">Height</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-class_feats">Class Feats</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-multiclass">Multiclass this character?</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-appearance">Insert image of character</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-symbol">Sigil/Symbol/Brand</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-backstory">Wha't your story?</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-friends">Friends</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-family">Family</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-foes">Foes</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-personality_traits">Personality Traits</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-ideals">Ideals</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-bonds">Bonds</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-flaws">Flaws</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-copper">Copper</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-silver">Silver</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-gold">Gold</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-platinum">Platinum</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-mythril">Mythril</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-backpack">Backpack Inventory</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-storage">Stored Inventory</label
-    ><input class="form-control" type="text" />
+    ><input value="" class="form-control" type="text" />
   </div>
   <div class="form-group">
     <label for="sheet-accessible">Worn/Weilded Items</label
-    ><input class="form-control" type="text" />
-  </div>
+    ><input value="" class="form-control" type="text" />
+  </div> -->
 </fieldset>

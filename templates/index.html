@@ -1,13 +1,16 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Characters</h1>
-
+{% for sheet in sheets %}
+<a href="/sheets/{{ sheet._id }}">
 <div class="row">
-  {% for sheet in sheets %}
   <div class="col-md-3 card">
-    <h2>
-      <a href="/sheets/{{ sheet._id }}">{{ sheet.name }}</a>
-    </h2>
-    <div class="card-body">XXX</div>
+    <p>{{ sheet.name }}</p>
+    <p>{{ sheet.level }}</p>
+    <div class="card-body">
+      <p>{{ sheet.race }}</p>
+      <p>{{ sheet.class }}</p>
+    </div>
+  </a>
     {% endfor %} {% endblock %}
   </div>
 </div>
