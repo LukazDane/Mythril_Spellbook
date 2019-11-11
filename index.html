@@ -3,38 +3,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mythril Spellbook</title>
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
-      integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/static/styles.css" />
+
+    <title>Mytrhil Spellbook</title>
   </head>
   <body>
-    {% include 'partials/navbar.html' %}
-    <div class="container">
-      {% block content %} BODY CONTENT GOES HERE {% endblock %}
-    </div>
-    <footer>
-      <div class="row">
-        <div class="col-sm-6">
-          <a href="https://github.com/lukazdane"
-            ><i class="fab fa-github"></i
-          ></a>
-        </div>
-        <div class="col-sm-6">
-          <a href="https://linkedin.com/in/LukazDane"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-        </div>
+    <nav class="navbar navbar-dark bg-dark nav-row">
+      <div class="navbar-brand col">
+        <a href="/index.html"
+          ><img
+            src="/assets/105-512.png"
+            alt="magic"
+            style="height: 3rem; width: 3rem; "
+        /></a>
       </div>
-    </footer>
+      <div class="col">
+        <button class="nav-item btn btn-sm btn-outline-primary">
+          <a class="nav-link" href="/spellbooks.html">Books</a>
+        </button>
+      </div>
+      <div class="col">
+        <button class="nav-item btn btn-sm btn-outline-primary">
+          <a class="nav-link" href="/spells.html">Spells</a>
+        </button>
+      </div>
+    </nav>
+
+    <!-- bootstrap js und stuff -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
