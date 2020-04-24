@@ -1,0 +1,23 @@
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">{{ spell.sname }}</div>
+    <div class="card-body text-primary">
+        <h5 class="card-title">
+            {% if spell.verbal == True %}
+            V
+            {% endif %}
+            {% if spell.somatic == True %}
+            S
+            {% endif %}
+            {% if spell.material == True %}
+            M
+            {% endif %}
+            {% if spell.ritual == True %}
+            R
+            {% endif %}
+            {% if spell.concentration == True %}
+            C
+            {% endif %}
+        </h5>
+        <p class="card-text">{{spell.description}}</p>
+    </div>
+</div>

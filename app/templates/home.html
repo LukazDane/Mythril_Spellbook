@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class='row'>
+    <div class='col'>
+        <h1>Spell Book</h1>
+        <form action="{{ url_for('index') }}" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.sname.label }}<br>
+                {{ form.sname(size=32) }}<br>
+                {% for error in form.sname.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.slevel.label }}<br>
+                {{ form.slevel(size=32) }}<br>
+                {% for error in form.slevel.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.verbal.label }}<br>
+                {{ form.verbal(size=32) }}<br>
+                {% for error in form.verbal.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.somatic.label }}<br>
+                {{ form.somatic(size=32) }}<br>
+                {% for error in form.somatic.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.material.label }}<br>
+                {{ form.material(size=32) }}<br>
+                {% for error in form.material.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.concentration.label }}<br>
+                {{ form.concentration(size=32) }}<br>
+                {% for error in form.concentration.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.ritual.label }}<br>
+                {{ form.ritual(size=32) }}<br>
+                {% for error in form.ritual.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.description.label }}<br>
+                {{ form.description(size=32) }}<br>
+                {% for error in form.description.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+    <div class='col'>
+        <h1>Spells</h1>
+        {% for spell in spells %}
+        {% include 'partials/spellcard.html' %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
