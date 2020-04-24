@@ -1,1 +1,1 @@
-web: flask db upgrade; flask; gunicorn mythril_spellbook:app 
+web: flask db upgrade; flask translate compile; gunicorn mythril_spellbook:app
